@@ -14,7 +14,7 @@ app.set('views', './views/pug');
 
 // Set up session middleware
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: process.env.SESSION_SECRET || 'default-secret-for-testing-only',
   resave: true,
   saveUninitialized: true,
   cookie: { secure: false }
